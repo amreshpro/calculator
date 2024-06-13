@@ -1,5 +1,7 @@
 
 .btn-container{
     display: flex;
-    gap:5px
+    gap:5px;
+    margin: 4px;
+    flex-wrap:wrap;
 }
