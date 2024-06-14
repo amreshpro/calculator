@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+
 import "./style.css";
-export default function Input({ placeholder = "", onInput = () => {} }) {
-  const [value, setValue] = useState('')
+export default function Input({ placeholder = "", value, onInput = () => {} }) {
   function handleInput(e) {
-    setValue(e.target.value)
-    onInput(e.target.value);
+    console.log(e.key)
+    if (e.target.value) {
+      onInput(e.target.value);
+    }
   }
+
   return (
     <input
       type="number"
       className="main-input"
-      value={value}
+      defaultValue={value}
       placeholder={placeholder}
       onInput={handleInput}
     />
